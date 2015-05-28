@@ -5,3 +5,17 @@ var factorial = function(num) {
   }
   return total;
 }
+
+$(document).ready(function() {
+  $("form#factorial").submit(function() {
+    var num = parseInt($("input#number").val());
+    var result = factorial(num);
+
+    $("#result").show();
+    $(".input").text(num);
+    $(".result").text(factorial(num));
+
+    event.preventDefault();
+
+  });
+});
